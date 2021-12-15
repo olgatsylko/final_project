@@ -1,0 +1,28 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --config ./src/config/.mocharc.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olgatsylko/project.git"
+  },
+  "author": "Olga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/olgatsylko/project/issues"
+  },
+  "homepage": "https://github.com/olgatsylko/project#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "chai": "^4.3.4",
+    "chai-json-schema": "^1.5.1",
+    "mocha": "^9.1.3",
+    "moment": "^2.29.1",
+    "puppeteer": "^13.0.0",
+    "winston": "^3.3.3"
+  }
+}
