@@ -6,6 +6,7 @@ const ProductContainer = require ('./objects/controls/productContainer');
 const CheckOut = require ('./objects/pages/checkOut');
 const CartPage = require ('./objects/pages/cartPage');
 const MainPage = require ('./objects/pages/mainPage');
+
 class Ui extends BaseObject {
 
     get menu() {

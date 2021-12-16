@@ -1,6 +1,6 @@
 ///////////////Updated
 
-/*const app = require ('../app/app');
+const app = require ('../app/app');
 
 describe ('Search option', function(){
     it ('UI: Search input', async function(){
@@ -24,12 +24,12 @@ describe ('Search option', function(){
         await app.ui.ph.page.waitForResponse(resp => {
             return resp.url() === 'https://www.luxbynox.com/cart.json' && resp.status() === 200;
         })
-        await app.ui.productCont.click('addToCart');
+    
 
 
     });
 
-    it ('API: search end point', async function(){
+    xit ('API: search end point', async function(){
         const resp = await app.api.srchEndP.getSearch();
         app.expect(resp.status).to.equal(200);
         app.expect(resp.headers['content-type']).to.equal('text/html; charset=utf-8');
@@ -38,4 +38,4 @@ describe ('Search option', function(){
 
     });
 
-});*/
+});

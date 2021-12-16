@@ -1,9 +1,9 @@
 ////////////UPADTED
 
-const app = require ('../app/app');
+/*const app = require ('../app/app');
 
 describe ('Menu', function(){
-    it ('UI: Menu', async function(){
+    xit ('UI: Menu', async function(){
     await app.ui.menu.clickBy('menuItems', 1)
     await app.ui.ph.page.waitForResponse(resp => {
             return resp.url() === 'https://www.luxbynox.com/collections/baby-explorer' && resp.status() === 200;
@@ -15,7 +15,7 @@ describe ('Menu', function(){
 
     });
 
-    xit ('UI: Cart', async function(){
+    it ('UI: Cart', async function(){
         await app.ui.header.click('cart');
         await app.ui.ph.page.waitForResponse(resp => {
             return resp.url() === 'https://www.luxbynox.com/cart' && resp.status() === 200;
@@ -28,13 +28,15 @@ describe ('Menu', function(){
           ]);
     
     });
-    xit ('UI: Content', async function(){
+    it ('UI: Content', async function(){
         await app.ui.productCont.productsOnSale;
         await app.ui.productCont.clickBy('productsOnSale', 0);
         await app.ui.ph.page.waitForResponse(resp => {
-            return resp.url() === 'https://www.luxbynox.com/cart.json' && resp.status() === 200;//поменять на уникальную
+            return resp.url() === 'https://www.luxbynox.com/products/car-repair-kit.js' && resp.status() === 200;
         })
-        //console.log (await app.ui.ph.page.title());
+        //await app.ui.ph.page.waitFor(1000);
+
+        await app.ui.productCont.isVisible('addToCart');
         let pageTitle =await app.ui.ph.page.title();
         app.expect(pageTitle).to.include('Train Track Explorer');
 
@@ -46,7 +48,7 @@ describe ('Menu', function(){
     });
 
 
-    xit ('UI: Collections', async function(){
+    it ('UI: Collections', async function(){
         await app.ui.productCont.clickBy('collections', 0);
         await app.ui.ph.page.waitForResponse(resp => {
             return resp.url() === 'https://www.luxbynox.com/collections/train-sets' && resp.status() === 200;
@@ -66,4 +68,4 @@ describe ('Menu', function(){
     });
 
 
-});
+});*/

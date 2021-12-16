@@ -8,17 +8,12 @@ class BaseObject extends Base {
         return this.#ph;
     }
 
-    // async emailSubscrClose(){
-    //    let el =  await this.#ph.page.$('.email-subscription-new-close');
-    //    await el.click();
-    //    printer.print('method', 'Email Subscriber is closed');
-    // }
-
-    // async welcomeModuleClose(){
-    //     let el =  await this.#ph.page.$('.welcome-mat-module-close');
-    //     await el.click();
-    //     printer.print('method', 'Welcome module is closed');
-    //  }
+    async typeInput(text, element){
+        const input = await this[element];
+        await input.type(text, { delay: 200});
+        printer.print('method', `Value '${text}' is typed in '${element}'`);
+        //await input.click();
+    }
 
     async clearAndInput(text, element){
         const input = await this[element];
@@ -52,18 +47,17 @@ class BaseObject extends Base {
         await el.click();
         printer.print('method', `Clicked on Element '${element}'`);
     }
-    async waitVisible(element) {
-        let box = false;
-        //console.log(target);
-        await this.#ph.page.waitForFunction(async() => {
-            let target = await this[element];
-            console.log(target);
-            box = await target.boundingBox();
-            return !!box;
-        })
-        return box;
-        
-    }
+    // async waitVisible(element) {
+    //     let box = false;
+    //     //console.log(target);
+    //     await this.#ph.page.waitForFunction(async() => {
+    //         let target = await this[element];
+    //         console.log(target);
+    //         box = await target.boundingBox();
+    //         return !!box;
+    //     })
+    //     return box;
+    // }
 
     // async waitVisible(element) {
     //     await this.#ph.page.waitForFunction(async() => {
@@ -72,11 +66,21 @@ class BaseObject extends Base {
     //         return !!box;
     //     })  
     // }
-    // async waitVisible(element) {
-    //     await this.#ph.page.waitForSelector(element, {
-    //         visible: true,
-    //     })    
-    // }
+    async waitVisible(element) {
+        let el = await this[element];
+        await this.#ph.page.waitForSelector(el, {
+            visible: true
+        })    
+    }
+    async isVisible(element) {
+        const el = await this[element];
+        if (await el.isIntersectingViewport()) {
+            printer.print('method', `Element '${element}' is visible`);
+        } else {
+            printer.print('method', `Element '${element}' is NOT visible`);
+        }
+    }
+
     
     async clickBy(elements, textOrPosition){
         let arr = await this[elements];
