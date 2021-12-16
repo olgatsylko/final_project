@@ -25,7 +25,7 @@ class BaseObject extends Base {
 
     async searchText(text, element){
         const elementHandle = await this[element];
-        await elementHandle.type(text, { delay: 100});
+        await elementHandle.type(text, { delay: 200});
         printer.print('method', `Value '${text}' is typed in '${element}'`);
         await elementHandle.press('Enter');
         printer.print('method', `Enter is pressed`);

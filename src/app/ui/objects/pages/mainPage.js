@@ -1,23 +1,13 @@
 const BasePage = require ('./basePage');
 
 class MainPage extends BasePage {
-    // get customBanner() {
-    //     return this.ph.page.$$('.hp-banners-menu-row li>a');
-    // }
-    // get recommends(){
-    //     return this.ph.page.$('#recommendations h3');
-    // }
+    get intro() {
+        return this.ph.page.$$('.rich-text p');
+    }
 
-    // get recViewAll() {
-    //     return this.ph.page.$('#recommendations #recommendations-view-all'); 
-      
-    // }; 
-
-    // get recommendFilterButton(){
-    //     return this.ph.page.$('.recommended-filter .active')
-    // }
-
-    //Add API test for PaymentsConfig
+    get gallery(){
+        return this.ph.page.$$('.gallery__image-container img');
+    }
 
 }
 
