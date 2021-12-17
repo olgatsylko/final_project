@@ -6,7 +6,7 @@ class Search extends BaseObject {
         
     // }
     get searchContent() {
-        return this.ph.page.$$(`a[href*="train"]`);
+        return this.ph.page.$$(`a[href*='/products']`);
     }
 
     get searchInput(){

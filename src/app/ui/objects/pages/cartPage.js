@@ -4,11 +4,9 @@ class CartPage extends BasePage {
     get productGrid(){
         return this.ph.page.$('.cart__image-wrapper');
     }
-
     get removeButton() {
         return this.ph.page.$('.cart__remove');
     }
-
     get quantity() {
         return this.ph.page.$('.cart__quantity-selector');
     }
@@ -20,6 +18,12 @@ class CartPage extends BasePage {
     }
     get continueShopButton(){
         return this.ph.page.$(`.grid a[href*='/collections']`);
+    }
+    get subTotal(){
+        return this.ph.page.$('.cart__subtotal-price');
+    }
+    get emptyMess(){
+        return this.ph.page.$('.cart--empty-message');
     }
 }
 

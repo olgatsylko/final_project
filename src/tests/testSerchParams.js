@@ -17,12 +17,13 @@ describe('Search with Parameters', function() {
     ];
   
     tests.forEach(({args, expected}) => {
-      it(`Validate that search results include search value`, async function() {
-        await app.ui.menu.clickBy('menuItems', 4);
-        await app.ui.ph.page.waitForNavigation();
-        await app.ui.search.isVisible('searchInput');
-        await search(args);
-        app.expect(await app.ui.ph.page.title()).to.includes(expected);
-      });
+        it(`Validate that search results include search value`, async function() {
+            await app.ui.menu.clickBy('menuItems', 4);
+            await app.ui.ph.page.waitForNavigation();
+            await app.ui.search.isVisible('searchInput');
+            await search(args);
+            app.expect(await app.ui.ph.page.title()).to.includes(expected);
+
+        });
     });
 });*/

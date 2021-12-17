@@ -8,7 +8,6 @@ describe ('Search option', function(){
         await app.ui.ph.page.waitForNavigation();
 
         await app.ui.search.searchText('train', 'searchInput');
-        //await app.ui.ph.page.waitFor(1000);
         await app.ui.ph.page.waitForNavigation();
 
         let arr = await app.ui.search.searchContent;
@@ -17,8 +16,10 @@ describe ('Search option', function(){
 
         await app.ui.search.clickBy('searchContent', 1);
         await app.ui.ph.page.waitForResponse(resp => {
-            return resp.url() === 'https://www.luxbynox.com/cart.json' && resp.status() === 200;
+            return resp.url() === 'https://www.luxbynox.com/products/car-repair-kit.js' && resp.status() === 200;
         })
+        console.log(await app.ui.ph.page.title());
+        app.expect(await app.ui.ph.page.title()).to.include('Numbers Train');
 
     });
 

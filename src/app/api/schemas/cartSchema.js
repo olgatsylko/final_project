@@ -1,5 +1,5 @@
 const cartSchema = {
-    title: "Schema for cart",
+    title: "Schema for cart end point",
     type: "object",
     $ref: "#/definitions/Welcome8",
     definitions: {
