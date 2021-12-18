@@ -1,4 +1,4 @@
-const app = require ('../app/app');
+/*const app = require ('../app/app');
 
 describe ('Verify that User can edit quantity of products', function(){
     it ('E2E scenario: Add Product to the cart and edit quantity, clear the cart', async function(){
@@ -29,4 +29,4 @@ describe ('Verify that User can edit quantity of products', function(){
         app.expect(await app.ui.cartPage.getText('emptyMess')).to.include('Your cart is currently empty.')
 
     });
-});
+});*/

@@ -1,5 +1,6 @@
 const printer = require ('../../../config/support/logger');
 const Base = require ('../../base');
+const { scrollPageToBottom } = require('puppeteer-autoscroll-down')
 
 class BaseObject extends Base {
     #ph = require('../pageHolder');
@@ -47,31 +48,7 @@ class BaseObject extends Base {
         await el.click();
         printer.print('method', `Clicked on Element '${element}'`);
     }
-    // async waitVisible(element) {
-    //     let box = false;
-    //     //console.log(target);
-    //     await this.#ph.page.waitForFunction(async() => {
-    //         let target = await this[element];
-    //         console.log(target);
-    //         box = await target.boundingBox();
-    //         return !!box;
-    //     })
-    //     return box;
-    // }
 
-    // async waitVisible(element) {
-    //     await this.#ph.page.waitForFunction(async() => {
-    //         let target = await this[element];
-    //         let box = await target.boundingBox();
-    //         return !!box;
-    //     })  
-    // }
-    async waitVisible(element) {
-        let el = await this[element];
-        await this.#ph.page.waitForSelector(el, {
-            visible: true
-        })    
-    }
     async isVisible(element) {
         const el = await this[element];
         if (await el.isIntersectingViewport()) {
@@ -80,8 +57,31 @@ class BaseObject extends Base {
             printer.print('method', `Element '${element}' is NOT visible`);
         }
     }
+    async scrollDownPage(element){
+        let isValueAvailable = true;
+        let el = await this[element];
+        while (isValueAvailable) {
+            await scrollPageToBottom(await this.#ph.page, { size: 500 })
+           // isValueAvailable = await el.isIntersectingViewport();
+            isValueAvailable = await el.boundingBox();
 
-    
+            isValueAvailable = false; // Update your condition-to-stop value
+        }
+    }
+
+    async waitVisible(element) {
+        await this.#ph.page.waitForFunction(async() => {
+            try{
+                let target = await this[element];//try catch
+                let box = await target.boundingBox();
+                return !!box;
+
+            } catch(err){
+                console.log(err.message);
+                return false;
+            }   
+        })  
+    }
     async clickBy(elements, textOrPosition){
         let arr = await this[elements];
         if (!Array.isArray(arr)){
@@ -100,7 +100,7 @@ class BaseObject extends Base {
                 if (text === textOrPosition) {
                     await element.click();
                     printer.print('method', `Element is clicked`);
-                   // break;
+                    break;
                 }
             }    
 

@@ -5,7 +5,7 @@ module.exports = {
     extension: ['js', 'mjs', 'cjs'],
     parallel: 'true',
     recursive: 'false',
-    reporter: 'spec',
+    reporter: 'mocha-allure-reporter',
     retries: 0,
     slow: '75',
     sort: false,

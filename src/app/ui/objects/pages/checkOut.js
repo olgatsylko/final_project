@@ -35,7 +35,6 @@ class CheckOut extends BasePage {
         return this.ph.page.$('#continue_button');
     }
     get continuePaymentButton(){
-       // return this.ph.page.$x(`//span[text()="Continue to shipping"]`);
        return this.ph.page.$('#continue_button');
     }
     get returnToCart() {
@@ -68,6 +67,18 @@ class CheckOut extends BasePage {
     }
     get returnToCartlink(){
         return this.ph.page.$(`.breadcrumb a[href*='cart']`);
+    }
+    get invalidEmailMessage(){
+        return this.ph.page.$('#error-for-email_or_phone');
+    }
+    get invalidSurnameMessage(){
+        return this.ph.page.$('#error-for-last_name');
+    }
+    get invalidCityMessage(){
+        return this.ph.page.$('#error-for-city');
+    }
+    get invalidAddress1Message(){
+        return this.ph.page.$('#error-for-address1');
     }
 
 }

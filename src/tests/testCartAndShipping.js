@@ -1,7 +1,7 @@
 /////////////UPDATED
-/*const app = require ('../app/app');
+const app = require ('../app/app');
 
-describe ('Verify that User can add a product to the cart and proceed with check out', function(){
+/*describe ('Verify that User can add a product to the cart and proceed with check out', function(){
     it ('E2E scenario: Add Product to the cart and populate shipping details', async function(){
         await app.ui.productCont.productsOnSale;
         await app.ui.productCont.clickBy('productsOnSale', 0);
@@ -75,6 +75,12 @@ describe ('Verify that User can add a product to the cart and proceed with check
 
         let pageTl = await app.ui.ph.page.title();
         app.expect(pageTl).to.include('Products');
+
+
+
+
+
+
      
 
         // await app.ui.ph.page.waitForResponse(resp => {

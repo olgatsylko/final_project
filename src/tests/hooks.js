@@ -1,3 +1,5 @@
+require("mocha-allure-reporter");
+
 const printer = require ('../config/support/logger');
 const app = require ('../app/app');
 

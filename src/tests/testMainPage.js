@@ -10,6 +10,7 @@ describe ('Main page', function(){
         
         //await app.ui.ph.page.waitFor(2000);
         //await app.ui.ph.page.waitForNavigation();
+        await app.ui.mainPage.whatPage();
 
         let arr = await app.ui.mainPage.intro;
         let text = await app.ui.mainPage.getTextFromArr(arr[0]);
