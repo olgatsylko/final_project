@@ -1,7 +1,7 @@
 const app = require('../../app/app');
 
 describe('API: Main page - cart', () => {
-  xit('API: cart end point', async () => {
+  it('API: cart end point', async () => {
     const resp = await app.api.cartJson.getCart();
     app.expect(resp.status).to.equal(200);
     app.expect(resp.headers['content-type']).to.equal('application/json; charset=utf-8');

@@ -1,7 +1,7 @@
 const app = require('../../app/app');
 
 describe('API: Main page - search', () => {
-  xit('API: search end point', async () => {
+  it('API: search end point', async () => {
     const resp = await app.api.srchEndP.getSearch();
     app.expect(resp.status).to.equal(200);
     app.expect(resp.headers['content-type']).to.equal('text/html; charset=utf-8');

@@ -1,7 +1,7 @@
 const app = require('../../app/app');
 
 describe('Search option', () => {
-  xit('UI: Search input', async () => {
+  it('UI: Search input', async () => {
     await app.ui.menu.clickBy('menuItems', 4);
     await app.ui.ph.page.waitForNavigation();
 
