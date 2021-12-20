@@ -1,30 +1,26 @@
-require('mocha-allure-reporter');
-
 const printer = require('../config/support/logger');
 const app = require('../app/app');
 
-
 exports.mochaHooks = {
-  //count: 0,
 
-  async beforeAll() {
+  beforeAll: async function(){
     await app.ui.ph.launch();
   },
-  async beforeEach() {
+
+  beforeEach: async function () {
     await app.ui.ph.create();
     await app.ui.ph.navigate();
     printer.print('DESCRIBE', `${this.currentTest.parent.title} started`);
     printer.print('IT', `${this.currentTest.title} started`);
-    //this.count++;
+  },
 
+  afterEach: async function() {
+      printer.print('DESCRIBE', `${this.currentTest.parent.title} test finished`);
+      printer.print('IT', `${this.currentTest.title} test finished`);
   },
-  afterEach() {
-    printer.print('DESCRIBE', `${this.currentTest.parent.title} finished`);
-    printer.print('IT', `${this.currentTest.title} finished`);
-  },
-  async afterAll() {
+
+  afterAll: async function() {
     await app.ui.ph.close();
     await app.ui.ph.finish();
-  // console.log(`The number of run tests is ${this.count}`);
   }
 };

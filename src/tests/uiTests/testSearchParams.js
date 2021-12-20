@@ -15,7 +15,7 @@ describe('Search with Parameters', () => {
   ];
 
   tests.forEach(({ args, expected }) => {
-    xit('Validate that search results include search value', async () => {
+    it('Validate that search results include search value', async () => {
       await app.ui.menu.clickBy('menuItems', 4);
       await app.ui.ph.page.waitForNavigation();
       await app.ui.search.isVisible('searchInput');

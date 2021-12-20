@@ -1,6 +1,6 @@
 const app = require('../../app/app');
 
-describe('Main page', () => {
+describe('API: Main page - search', () => {
   xit('API: search end point', async () => {
     const resp = await app.api.srchEndP.getSearch();
     app.expect(resp.status).to.equal(200);

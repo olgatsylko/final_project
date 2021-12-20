@@ -1,6 +1,6 @@
 const app = require('../../app/app');
 
-describe('Main page', () => {
+describe('API: Main page - cart', () => {
   xit('API: cart end point', async () => {
     const resp = await app.api.cartJson.getCart();
     app.expect(resp.status).to.equal(200);

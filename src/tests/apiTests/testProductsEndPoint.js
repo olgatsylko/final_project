@@ -1,6 +1,6 @@
 const app = require('../../app/app');
 
-describe('Main page', () => {
+describe('API: Main page - products', () => {
   xit('API: products end point', async () => {
     const resp = await app.api.product.getProducts();
     app.expect(resp.status).to.equal(200);

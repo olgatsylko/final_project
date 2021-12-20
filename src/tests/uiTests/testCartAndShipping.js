@@ -21,7 +21,8 @@ describe('Verify that User can add a product to the cart and proceed with check 
 
     await app.ui.cartPage.click('checkOutButton');
     await app.ui.ph.page.waitForNavigation();
-
+    await app.ui.ph.page.waitForResponse((resp) => resp.url() === 'https://monorail-edge.shopifysvc.com/unstable/produce_batch' && resp.status() === 200);
+    
     await app.ui.checkout.isVisible('email');
     await app.ui.checkout.typeInput('test_test.com', 'email');
 
