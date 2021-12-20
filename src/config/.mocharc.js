@@ -3,7 +3,7 @@ const path = require ('path');
 module.exports = {
     colour: 'true',
     extension: ['js', 'mjs', 'cjs'],
-    parallel: 'true',
+    parallel: 'false',
     recursive: 'false',
     reporter: 'mocha-allure-reporter',
     retries: 0,
