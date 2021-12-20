@@ -1,7 +1,7 @@
-const cartSchema = require ('./cartSchema');
+const cartSchema = require('./cartSchema');
 
 const schema = {
-    cartSchema,
+  cartSchema,
 };
 
 module.exports = schema;
