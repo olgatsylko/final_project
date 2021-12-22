@@ -10,7 +10,6 @@ class CheckOut extends BasePage {
   }
 
   get firstName() {
-  // return this.ph.page.$('#checkout_shipping_address_first_name');
     return this.ph.page.$('div[data-address-field*=\'first_name\'] input');
   }
 

@@ -27,7 +27,6 @@ class BaseApi extends Base {
       throw err;
     }
   }
-
 }
 
 module.exports = BaseApi;

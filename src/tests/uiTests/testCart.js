@@ -8,7 +8,8 @@ describe('Verify that User can edit quantity of products', () => {
     await app.ui.ph.page.waitForNavigation();
     await app.ui.productCont.isVisible('addToCart');
     const pageTitle = await app.ui.ph.page.title();
-    app.expect(pageTitle).to.include('Train Track Explorer');
+    //app.expect(pageTitle).to.include('Train Track Explorer');
+    app.expect(pageTitle).to.include('11111');
 
     await app.ui.productCont.click('addToCart');
     await app.ui.ph.page.waitForResponse((resp) => resp.url() === 'https://www.paypalobjects.com/api/checkout.min.js' && resp.status() === 200);

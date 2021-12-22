@@ -15,12 +15,14 @@ exports.mochaHooks = {
   },
 
   afterEach: async function() {
-      printer.print('DESCRIBE', `${this.currentTest.parent.title} test finished`);
-      printer.print('IT', `${this.currentTest.title} test finished`);
+    await app.ui.ph.close();
+    printer.print('DESCRIBE', `${this.currentTest.parent.title} test finished`);
+    printer.print('IT', `${this.currentTest.title} test finished`);
+    printer.print('IT', `Test status is ${this.currentTest.state}`);
+  
   },
 
   afterAll: async function() {
-    await app.ui.ph.close();
     await app.ui.ph.finish();
   }
 };

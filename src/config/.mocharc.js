@@ -9,7 +9,7 @@ module.exports = {
     retries: 0,
     slow: '75',
     sort: false,
-    spec: [path.resolve(process.cwd(), 'src/tests/**/*.js')], //['src/tests/**/*.js']
+    spec: [path.resolve(process.cwd(), 'src/tests/**/*.js')],
     timeout: '200000',
     ui: 'bdd',
     require: './src/tests/hooks.js'

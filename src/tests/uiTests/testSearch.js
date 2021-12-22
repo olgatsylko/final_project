@@ -13,7 +13,7 @@ describe('Search option', () => {
     app.expect(textResult).to.include('Train');
 
     await app.ui.search.clickBy('searchContent', 1);
-    await app.ui.ph.page.waitForResponse((resp) => resp.url() === 'https://www.luxbynox.com/products/car-repair-kit.js' && resp.status() === 200);
+    await app.ui.ph.page.waitForNavigation();
     app.expect(await app.ui.ph.page.title()).to.include('Numbers Train');
 
   });

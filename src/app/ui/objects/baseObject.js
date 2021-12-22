@@ -41,7 +41,6 @@ class BaseObject extends Base {
     const txt = (await this.#ph.page.evaluate((element) => element.textContent, element)).trim();
     printer.print('method', `Element has text '${txt}'`);
     return txt;
-    //return (await this.#ph.page.evaluate((element) => element.textContent, element)).trim();
   }
 
   async click(element) {

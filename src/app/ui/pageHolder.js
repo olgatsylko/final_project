@@ -5,7 +5,6 @@ class PageHolder {
   #browser = null;
   #baseUrl = 'https://www.luxbynox.com/';
 
-
   get page() {
     return this.#page;
   }

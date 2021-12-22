@@ -18,7 +18,6 @@ class MainPage extends BasePage {
   }
 
   get collections() {
-    //return this.ph.page.$$('#shopify-section-collection-list img');
     return this.ph.page.$$('.one-third>a');
   }
 

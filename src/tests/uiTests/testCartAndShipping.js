@@ -43,19 +43,11 @@ describe('Verify that User can add a product to the cart and proceed with check 
 
     await app.ui.checkout.clearAndInput('test@test.com', 'email');
 
-    //await app.ui.checkout.isVisible('firstName');
     await app.ui.checkout.typeInput('Kate', 'firstName');
-
-    //await app.ui.checkout.isVisible('lastName');
     await app.ui.checkout.typeInput('Simon', 'lastName');
 
-    //await app.ui.checkout.isVisible('address');
     await app.ui.checkout.typeInput('Lenina str, 1-20', 'address');
-
-    //await app.ui.checkout.isVisible('postCode');
     await app.ui.checkout.typeInput('202019', 'postCode');
-
-    //await app.ui.checkout.isVisible('city');
     await app.ui.checkout.typeInput('Minsk', 'city');
 
     await app.ui.checkout.click('continueShipButton');
@@ -92,6 +84,5 @@ describe('Verify that User can add a product to the cart and proceed with check 
 
     const pageTl = await app.ui.ph.page.title();
     app.expect(pageTl).to.include('Products');
-
   });
 });
